@@ -1,0 +1,102 @@
+
+//Третья страница (Ремонт различных видов техники)
+.devices-to-repair {
+    height: 308px;
+
+    &__read-more-button {
+        display: none;
+    }
+
+    &__header {
+        border-top: 1px solid $border-color--shadow;
+        width: 100vw;
+        height: 80px;
+        padding: 16px;
+        background-image: linear-gradient(to right, $background-color--main, $background-color--header);
+    }
+
+    &__h2 {
+        font-size: $font-size--button-and-modal-menu;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $text-color--muted;
+        line-height: 24px;
+    }
+
+    &__slider {
+        background-color: $background-color--main;
+        height: 228px;
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: 0;
+            width: 24px;
+            height: 166px;
+            background: linear-gradient(to right, transparent, $background-color--main);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .swiper-wrapper {
+            padding: 16px;  
+        }
+            
+        .swiper-slide {
+            background-color: $background-color--header;
+            width: 240px;
+            height: 160px;
+            border: 1px solid $border-color--frame-brands;
+            border-radius: 6px;
+            display: flex;
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: 16px;
+                top: 120px;
+                transform: translateY(-50%);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 2.5px solid #FF3E79;
+                background: url('../img/dropdown.svg') no-repeat center;
+                background-size: 7.5px 12px;
+            }
+
+            .devices-to-repair__item {
+                font-size: $font-size--button-and-modal-menu;
+                font-weight: 500;
+                line-height: 24px;
+                margin: 16px;
+            }
+
+        }
+
+        .swiper-pagination {
+            width: 320px;
+            height: 12px;
+            margin-bottom: 20px;
+
+
+            .swiper-pagination-bullet {
+                width: 12px;        
+                height: 12px;       
+                background: $background-color--swiper-pagination-bullet; 
+                opacity: 1;        
+                margin: 0 6px !important;
+                border-radius: 50%; 
+            
+                &-active {
+                    background: $background-color--swiper-pagination-bullet-active;
+                }
+            }
+        }
+    }
+}
+
+
+

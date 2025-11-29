@@ -1,0 +1,58 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit; 
+
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  width: 100%; // вместо фиксированной ширины
+  min-width: $screen-xs; // минимальная ширина
+  margin: 0 auto;
+}
+
+button, a {
+  all: unset;
+  cursor: pointer;
+  box-sizing: border-box; 
+  display: inline-block;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav__contacts-buttons {
+  display: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+.show-less:not(.hidden) {
+    display: flex;
+}
+
+

@@ -1,0 +1,19 @@
+
+//Футер
+.footer {
+    height: 148px;
+    background-color: $background-color--main;
+    border-top: 1px solid $border-color--shadow;
+    padding-top: 16px;
+    padding-bottom: 19px;
+    font-size: $font-size--main;
+    text-align: center;
+    color: $text-color--muted;
+    line-height: 16px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}

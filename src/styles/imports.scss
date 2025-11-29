@@ -1,0 +1,940 @@
+@import './common/font-face.scss';
+@import './common/variables.scss';
+@import './pages/modal-menu.scss';
+@import './pages/brands-to-repair.scss';
+@import './pages/devices-to-repair.scss';
+@import './pages/prices-for-services-mobile.scss';
+@import './pages/prices-for-services-tablet.scss';
+@import './pages/footer.scss';
+@import './main.scss';
+@import './pages/services.scss';
+@import './pages/modal-call&feedback.scss';
+
+// Импорт стилей Swiper
+@import '~swiper/swiper-bundle.css';
+
+
+//Медиа-запрос для 360px
+@media (min-width:$screen-sm) {
+    
+    body {
+        max-width: $screen-sm; 
+        
+        .brands-to-repair__header, 
+        .devices-to-repair__header, 
+        .prices-for-services__header {
+            width: 100vw;
+            border-bottom: none;
+
+        }
+        //Модальное окно
+        .modal-menu {
+            width: 360px;
+
+            &__btn-search {
+                margin-left: 111.78px;
+            }
+
+            &__list-menu {
+                width: 222px;
+            }
+        }
+
+        //Первая страница (Услуги и сервисы)
+        .main-hero-section__img-logo {
+            margin: 0 auto;
+            display: block;
+        }
+        .btn-submit-a-request, .btn-repair-status {
+            display: none;
+        }
+
+        //Вторая страница (Ремонт техники различных брендов)
+        .brands-to-repair__read-more-button {
+            display: none;
+        }
+
+        .brands-to-repair__slider {
+            height: 140px;
+        }
+
+        .swiper-pagination {
+            width: 360px !important;
+            margin: 0 auto;
+        }
+
+        //Третья страница (Ремонт различных видов техники)
+        .devices-to-repair__read-more-button {
+            display: none;
+        }
+
+        //Четвертая страница (Цены на услуги) ПЛАНШЕТ, ДЕСКТОП
+        .prices-for-services__tablet {
+            display: none;
+        }
+
+        .commercial-link {
+            width: 200px;
+            text-wrap: nowrap;
+        }
+
+        .extra-info pre {
+            margin-left: 5px;
+        }
+        
+    }
+}
+
+
+//Медиа-запрос для 768px
+@media (min-width:$screen-md) {
+    body {
+        max-width: $screen-md; 
+        min-height: 496px;
+
+        //Модальное окно
+        .modal-menu {
+            padding-left:24px;
+            padding-right: 24px;
+            width: 320px;
+            box-shadow: 16px 0 52px #0E185033;
+            clip-path: inset(0 -52px 0 0);
+
+            &__btn-search {
+                margin-left: 78.27px;
+            }
+
+             &__list-menu {
+                width: 222px;
+                margin-top: 46.27px;
+                margin-bottom: 268px;
+            }
+
+            &__item--equipment-repair {
+                svg {
+                margin-left: -24px;
+                }
+            }
+
+            &__item {
+                margin-bottom: 32px;
+            }
+
+             &__contacts-tel {
+                margin-bottom: 40px;
+            }
+        }
+
+        //Первая страница (Услуги и сервисы)
+        .header {
+            padding: 24px;
+
+            &-nav__menu-open {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 2px;
+                    height: 32px;
+                    top: 4px;
+                    left: 60px;
+                    border-radius: 1px;
+                    background: #EAEAEA;
+                }
+            }
+
+            &-nav__devider {
+                display: none;
+            }
+
+            &-nav__logo {
+                margin-left: 42.7px;
+            }
+
+            &-nav__contacts-buttons {
+                display: flex;
+                gap: 16px;
+                margin-left: 250.73px;
+                margin-right: 42px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 2px;
+                    height: 32px;
+                    top: 4px;
+                    left: 172px;
+                    border-radius: 1px;
+                    background: #EAEAEA;
+                }
+            }
+
+            &-nav__btn-repair {
+                margin-left: 0px;
+            }
+
+            &-nav__btn-checkstatus {
+                margin-left: 16px;
+            }
+        }
+
+        .main {
+            padding: 24px;
+            padding-bottom: 32px;
+
+            &-heading {
+                margin-bottom: 32px;
+                margin-left: -24px;
+
+                &__text {
+                    margin-left: 20px;
+                }
+            }
+
+            .btn-submit-a-request, .btn-repair-status {
+                display: none;
+            }
+
+            &__slider {
+                margin: 0;
+            }
+
+            &-hero-section {
+                margin-top: 32px;
+
+                &__mobile-version, 
+                &__desktop-version {
+                    display: none;
+                }
+
+                &__tablet-version {
+                    display: block;
+                }
+
+                pre {
+                    margin-left: 0;
+                }
+
+                &__read-more-button {
+                    margin-left: 0;
+                    margin-bottom: 0;
+                    margin-top: -10px;
+                }
+            
+                &__img-logo {
+                    display: block;
+                    width: 360px;
+                    height: 208px;
+                    margin-left: 360px;
+                    margin-top: -200px;
+                    border-radius: 6px;
+                }
+            }
+        }
+
+        //Вторая страница (Ремонт техники различных брендов)
+
+        .brands-to-repair {
+            height: 320px;
+            background-color: $background-color--main;
+
+            &__header {
+                width: 100vw;
+                height: 56px;
+                padding: 16px 24px;
+            }
+
+            &__slider.tablet-layout__brands {
+                height: 208px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 72px;   
+                row-gap: 16px;
+                column-gap: 16px;
+                padding: 24px;
+                
+
+                .swiper-wrapper {
+                   display: contents;
+                }
+
+                .swiper-slide {
+                    width: 224px;
+                    height: 72px;
+                }
+
+            }
+
+            &__read-more-button {
+                display: flex;
+                margin-left: 24px;
+                gap: 8px;
+                font-weight: 500; 
+            }
+
+            .show-less {
+                margin-left: 20px;
+                font-weight: 500;
+            }
+        }
+
+        //Третья страница (Ремонт различных видов техники)
+
+        .devices-to-repair {
+            height: 320px;
+            background-color: $background-color--main;
+
+             &__header {
+                width: 100vw;
+                height: 56px;
+                padding: 16px 24px;
+                margin-top: 0;
+            }
+            
+            &__slider.tablet-layout__devices {
+                height: 208px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 160px;   
+                gap: 16px;
+                padding: 24px;
+                
+                &::after {
+                    display: none;
+                }
+
+                .swiper-wrapper {
+                   display: contents;
+                }
+
+                .swiper-slide {
+                    width: 224px;
+                }
+
+   
+            }
+
+            &__read-more-button {
+                display: flex;
+                margin-left: 24px;
+                gap: 8px;
+                font-weight: 500; 
+            }
+
+            .show-less {
+                margin-left: 20px;
+                font-weight: 500;
+            }
+
+        }
+
+        // Четвертая страница (Цены на услуги)
+        .prices-for-services__mobile {
+            display: none;
+        }
+        .prices-for-services__tablet {
+            display: block;
+        }
+        
+        //Футер 
+        .footer {
+            height: 106px;
+            padding-top: 0;
+            padding-bottom: 0;
+            letter-spacing: 0;
+
+            &__container {
+                display: flex;
+                flex-direction: row;
+                gap: 0;
+            }
+
+            &__text--year {
+                margin: 32px 0px 0px 24px;
+                text-align: left;
+            }
+
+            &__text--by-Apesong {
+                margin-left: 24px;
+                text-align: left;
+                width: 218px;
+            }
+
+            .footer__link {
+                margin-left: 35px;
+                margin-top: 32px;
+                text-align: left;
+                text-wrap: nowrap;
+            }
+
+            .footer__disclaimer {
+                text-align: right;
+                margin-left: 40px;
+                margin-top: 32px;
+                margin-right: 24px;
+            }
+        }
+    }
+}
+
+
+
+//Медиа-запрос для 1024px
+@media (min-width:$screen-lg) {
+  body {
+    max-width: $screen-lg; 
+  }
+}
+
+//Медиа-запрос для 1366px
+@media (min-width:$screen-xl) {
+  body {
+    max-width: $screen-xl; 
+  }
+}
+
+//Медиа-запрос для 1440px
+@media (min-width:$screen-xxl) {
+  
+    body {
+        max-width: $screen-xxl; 
+
+        .app-layout {
+            display: grid;
+            grid-template-columns: 305px 1fr;
+            grid-template-rows: 1fr;
+            min-height: 100vh;
+
+            //Модальное окно
+            .modal-menu {
+                display: block;
+                grid-column: 1;
+                position: static;
+                width: 100%;
+                height: 100vh;
+                padding-left: 24px;
+                padding-bottom: 0;
+                box-shadow: none;
+
+                &__header {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                &__btn-close {
+                    display: none;
+                }
+
+                &__btn-search {
+                    margin-left: 118.45px;
+                    margin-top: 35px;
+                }
+
+                &__logo {
+                    margin-left: -2px;
+                    margin-top: 30px;
+                }
+
+                &__list-menu {
+                    height: 368px;
+                    width: 276px;
+                    margin-top: 37.19px;
+                    margin-bottom: 241px;
+                }
+
+                &__item--equipment-repair {
+                    color: $text-color;
+                }
+
+                &__item--services {
+                    color: $text-color--muted;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: -24px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 4px;
+                        height: 28.3px;
+                        background-color: #41F6D7; 
+                        border-radius: 2px;
+                    }
+                }
+
+                &__item--equipment-repair svg {
+                   visibility: hidden;
+                }
+
+                &__item {
+                    margin-bottom: 28px;
+                }
+
+                &__contacts-buttons {
+                   margin-left: -5px;
+                }
+
+                &__contacts-mail {
+                   margin-left: -5px;
+                }
+
+                &__contacts-tel {
+                    margin-bottom: 41px;
+                    margin-left: -5px;
+                }
+
+                &__lang {
+                    margin-left: -5px;
+                }
+            }
+
+            .main-content-wrapper {
+                grid-column: 2;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+
+            //Модал колл и модал фидбэк
+
+            .modal {
+                display: none;
+                position: fixed; 
+                top: 0; 
+                left: 18%;       
+                z-index: 10000; 
+                grid-template-columns: 1000px 440px;
+                background: white;
+
+                height: 940px;
+                width: 1440px;
+
+                .div-grid-column1 {
+                    grid-column: 1;
+                    position: relative;
+                    opacity: 0.96;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 40px;
+                        height: 40px;
+                        top: 32px;
+                        left: 927px;
+                        background-image: url(../img/close.svg);
+                        cursor: pointer; 
+                        z-index: 10001;
+                    }
+                }
+
+                .div-grid-column2 {
+                    grid-column: 2;
+                    height: 940px;
+                    box-shadow: 
+                    2px 0px 4px 0px #454F7E05,
+                    -16px 0px 52px 0px #0E185033;
+                    background: white; 
+                }
+
+                &__close {
+                   display: none;
+                }
+
+                &__title {
+                    height: 32px;
+                    width: 288px;
+                    margin-top: 40px;
+                    margin-left: 30px;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 3px;
+                        height: 40px;
+                        border-radius: 6px;
+                        top: -8px;
+                        left: -30px;
+                        background-color: #41F6D7;
+                    }
+                }
+
+                .form-group {
+
+                    .form-input {
+                        width: 376px;
+                        height: 48px;
+                        border-radius: 8px;
+                        border: 1px solid #EAEAEA;
+                        margin-left: 30px;
+
+                        &__message {
+                            height: 118px;
+                            padding-bottom: 82px;
+                        }
+                    }
+                }
+
+                .form-agreement {
+                    margin-left: 30px;
+                    width: 376px;
+                    height: 48px;
+                    margin-bottom: 16px;
+
+                    br {
+                        display: none;
+                    }
+                }
+
+                .submit-button {
+                    margin-left: 270px;
+                }
+
+            }
+
+
+            //Первая страница (Услуги и сервисы)
+            .header {
+                display: none;
+            }
+
+            .main {
+                padding-top: 42px;
+                padding-bottom: 51px;
+                height: 537px;
+
+                &-heading {
+                    display: flex;
+                    margin-bottom: -30px;
+
+                    &__text {
+                        margin-left: 30px;
+                    }
+                }
+
+                .btn-submit-a-request {
+                    display: inline-block;
+                    margin-left: 700px;
+                    margin-bottom: 16px;
+                    font-weight: 500;
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        background-image: url(../img/repair.svg);
+                        top: -10px;
+                        left: 135px;
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+                .btn-repair-status {
+                    display: inline-block;
+                    margin-left: 80px;
+                    font-weight: 500;
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        background-image: url(../img/checkstatus.svg);
+                        top: -10px;
+                        left: 130px;
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+                &-nav-mask {
+                    overflow-x:auto;
+                    -webkit-mask-image: linear-gradient(to right, black);
+                    mask-image: linear-gradient(to right, black);
+                }
+
+                &__slider.desktop-layout__services {
+                    display: grid;
+                    grid-template-columns: repeat(5, auto);
+                    height: 82px;
+                    width: 1064px;
+                    font-weight: 500;
+                    margin-bottom: 16.2px;
+                    margin-left: 10px;
+                }
+                .swiper-wrapper {
+                    display: contents;
+                }
+        
+
+                &__btn-devices-to-repair, 
+                &__btn-add-services, 
+                &__btn-prices-for-services,
+                &__btn-address,
+                &__btn-special-prices,
+                &__btn-reviews {
+                    margin-right: 10px;
+                }
+
+                 &__btn-reviews {
+                    padding-top: 15px;
+                }
+
+                &-hero-section {
+                    margin-top: 0px;
+
+                    &__tablet-version, 
+                    &__mobile-version {
+                        display: none;
+                    }
+
+                    &__desktop-version {
+                        display: block;
+                    }
+
+                    pre {
+                        margin-left: 2px
+                    }
+
+                     &__read-more-button {
+                        margin-left: 12px;
+                        margin-top: -5px;
+
+                    }
+
+                    &__img-logo {
+                        display: block;
+                        width: 531.35px;
+                        height: 307px;
+                        margin-left: 560px;
+                        margin-top: -200px;
+                        border-radius: 6px;
+                    }
+                }
+            }
+
+            //Вторая страница (Ремонт техники различных брендов)
+            .brands-to-repair {
+                height: 338px;
+
+                &__header {
+                    width: 1120px;
+                    height: 56px;
+                    padding: 16px 32px;
+                }
+
+                &__slider.desktop-layout__brands {
+                    height: 208px;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-auto-rows: 72px;   
+                    row-gap: 16px;
+                    column-gap: 32px;
+                    padding: 24px 32px;
+
+                
+                    .swiper-wrapper {
+                        display: contents;
+                    }
+
+                    .swiper-slide {
+                        width: 240px;
+                        height: 72px;
+                    }
+
+                }
+
+                &__read-more-button {
+                    display: flex;
+                    margin-left: 32px;
+                }
+
+                .show-less {
+                    margin-left: 25px;
+                    font-weight: 500;
+                }
+            }
+
+            //Третья страница (Ремонт различных видов техники)
+            .devices-to-repair {
+                height: 338px;
+
+                &__header {
+                    width: 1120px;
+                    height: 56px;
+                    padding: 16px 32px;
+                }
+            
+                &__slider.desktop-layout__devices {
+                    height: 162px;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-auto-rows: 160px;   
+                    gap: 32px;
+                    margin: 24px 32px;
+                    
+                    &::after {
+                        display: none;
+                    }
+
+                    .swiper-wrapper {
+                    display: contents;
+                    }
+
+                    .swiper-slide {
+                        width: 240px;
+                    }
+
+          
+                }
+
+                &__read-more-button {
+                    display: flex;
+                    margin-left: 32px;
+                }
+
+                .show-less {
+                    margin-left: 25px;
+                    font-weight: 500;
+                }
+            }
+
+            //Четвертая страница (Цены на услуги)
+            .prices-for-services__tablet {
+                height: 626px;
+                display: block;
+
+                .prices-for-services__header {
+                    width: 1120px;
+                    padding: 24px 32px;
+                }
+
+                .price-list {
+                    width: 1075px;
+                    height: 356px;
+                    margin-left: 32px;
+
+                    // Заголовок таблицы
+                    &__header {
+
+                        .price-list__cell {
+                            padding-left: 24px;
+                            padding-bottom: 16px;
+                            padding-top: 31px;
+                        }
+                    }
+
+                    &__body {
+                        width: 1056px;
+                        height: 324px;
+                    }
+                    // Строки
+                    &__row {
+                        
+                        &::after {
+                            width: 1008px;
+                            left: 24px;          // Начало от левого края
+                        }
+                    }
+
+                    &__row--free {
+                
+                        &::after {
+                            display: none;
+                        }
+                    }
+
+                    &__cell {
+                        padding: 23px 24px; // Отступы внутри ячеек
+                        font-weight: 400;
+
+                        // Модификаторы для конкретных колонок
+                        &--service {
+                            width: 50%; 
+                        }
+
+                        &--price {
+                            width: 20%; 
+                        }
+
+                        &--time {
+                            width: 20%; 
+                        }
+
+                        &--action {
+                            width: 20%; 
+                        }
+                    }
+
+                    // Кнопка заказа
+                    &__order-btn {
+                        display: flex;
+                        vertical-align: middle;
+
+                        &::after {
+                            right: 24px;
+                        }
+
+                        // Добавляем псевдоэлемент для стрелки
+                        &::before {
+                            top: 27px;
+                            right: 40px;
+                        }
+
+                        &-text {
+                            margin: 0;
+                            margin-right: 35px;
+                        }  
+                    }
+
+                    &__order-btn--test {
+                        &::after {
+                            right: 24px;
+                            top: 16px;
+                        }
+                        // Добавляем псевдоэлемент для стрелки
+                        &::before {
+                            top: 28px;
+                            right: 40px;
+                        }
+                    }
+                }
+
+                .extra-info {
+                    margin-top: 32px;
+                    padding: 0;
+                    padding-left: 30px;
+                }
+
+                .commercial-link {
+                    margin-left: 5px;
+                }
+            }
+
+            //Футер 
+            .footer {
+                height: 86px;
+
+                &__text--year {
+                    margin: 32px 0px 0px 31px;
+                }
+
+                &__text--by-Apesong {
+                    margin-left: 32px;
+                }
+
+                .footer__link {
+                    margin-left: 145px;
+                }
+
+                .footer__disclaimer {
+                    margin-left: 149px;
+                    margin-right: 33px;
+                }
+            }
+        }
+    }
+}

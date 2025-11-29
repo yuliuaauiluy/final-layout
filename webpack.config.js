@@ -42,7 +42,13 @@ module.exports = {
           'sass-loader', // compiles Sass to CSS, using Node Sass by default
         ],
       },
-
+    {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
+      },
       // Подключаем шрифты из css
       {
         test: /\.(eot|ttf|woff|woff2)$/,
@@ -67,7 +73,7 @@ module.exports = {
   plugins: [
     // Подключаем файл html, стили и скрипты встроятся автоматически
     new HtmlWebpackPlugin({
-      title: 'Webpack 4 Starter',
+      title: 'Ремонт техники Dell',
       template: './src/index.html',
       inject: true,
       minify: {

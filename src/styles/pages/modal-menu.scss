@@ -1,0 +1,86 @@
+
+//Мобильное меню
+.modal-menu {
+  display: none;
+  min-height: 100%;
+  padding-left:16px;
+  padding-right: 16px;
+  padding-bottom: 32px;
+  font-weight: 500;
+
+  &__header {
+    display: flex;
+  }
+
+  &__btn-close, &__btn-search {
+    margin-top: 24px;
+  }
+
+  &__logo {
+    margin-top: 18.73px;
+    margin-left: 16.73px;
+  }
+
+  &__btn-search {
+    margin-left: 94.27px;
+  }
+
+  &__list-menu {
+    height: 364px;
+    width: 214px;
+    font-size: $font-size--button-and-modal-menu;
+    margin-top: 22.27px;
+  }
+
+  &__item--equipment-repair {
+    color: $text-color--muted;
+  }
+
+  &__item--equipment-repair svg {
+      margin-left: -16px;
+    }
+
+  &__link--equipment-repair {
+    display: block;
+    margin-top: -40px;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+  }
+
+  &__contacts-buttons {
+    margin-top: 8px;
+    display: flex;
+    gap: 16px;
+  }
+
+   &__contacts-mail {
+    margin-top: 16px;
+    margin-bottom: 12px;
+    font-size: $font-size--button-and-modal-menu;
+  }
+
+  &__contacts-tel {
+    display: block;
+    margin-bottom: 8px;
+    font-size: $font-size--phone-number;
+    font-weight: 700;
+  }
+
+  &__lang {
+    display: flex;
+    gap: 7px;
+    font-size: $font-size--button-and-modal-menu;
+  }
+
+  &__lang--ru {
+    color: $text-color--muted;
+  }
+
+}
+
+
+
+ 
+

@@ -1,0 +1,181 @@
+
+//Четвертая страница (Цены на услуги) ПЛАНШЕТ, ДЕСКТОП
+.prices-for-services__tablet {
+    height: 615px;
+    background-color: $background-color--main;
+
+    .prices-for-services__header {
+        border-top: 1px solid $border-color--shadow;
+        width: 100vw;
+        height: 57px;
+        padding: 16px 24px;
+        background-image: linear-gradient(to right, $background-color--main, $background-color--header);
+    }
+
+    .prices-for-services__h2 {
+        font-size: $font-size--button-and-modal-menu;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $text-color--muted;
+        line-height: 24px;
+    }
+    
+    .price-list {
+        width: 720px;
+        height: 356px;
+        border-collapse: collapse; // Убираем двойные границы
+        background-color: $background-color--header;
+        font-size: $font-size--main;
+        margin: 0 auto;
+
+        // Заголовок таблицы
+        &__header {
+            background-color: $background-color--main; // или другой цвет для шапки
+
+            .price-list__cell {
+                font-weight: 500;
+                color: $text-color--muted;
+                padding-left: 16px;
+                padding-bottom: 16px;
+                color: $text-color--muted;
+            }
+        }
+
+        &__body {
+            width: 720px;
+            height: 324px;
+            font-weight: 400;
+        }
+        // Строки
+        &__row {
+            position: relative;
+            
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 688px;
+                    left: 15px;          // Начало от левого края
+                    right: 65px;         // Конец от правого края
+                    height: 1px;         // Толщина линии
+                    background-color:  #EAEAEA;
+                }
+        }
+
+        &__row--free {
+    
+             &::after {
+                display: none;
+             }
+        }
+
+        &__cell {
+            padding: 23px 16px; // Отступы внутри ячеек
+            text-align: left;
+            vertical-align: middle;
+            font-weight: 500;
+            color: $text-color;
+
+            // Модификаторы для конкретных колонок
+            &--service {
+                width: 50%; 
+            }
+
+            &--price {
+                width:10%; 
+            }
+
+            &--time {
+                width: 16%; 
+            }
+
+            &--action {
+                width: 20%; 
+            }
+        }
+
+        // Кнопка заказа
+        &__order-btn {
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: 16px;
+                top: 16px;
+                width: 119px;
+                height: 32px;
+                border-radius: 16px;
+                background-color: #FF3E79; // только цвет фона
+                z-index: 0;
+            }
+            // Добавляем псевдоэлемент для стрелки
+            &::before {
+                content: '';
+                position: absolute;
+                top: 27px;
+                right: 27px;
+                width: 7px;
+                height: 10px;
+                background: url('../img/dropdown-white.svg') no-repeat center;
+                z-index: 1;
+            }
+
+            &-text {
+                position: relative;
+                z-index: 1;
+                color: white;
+                margin-left: 8px;
+                font-weight: 700;
+                font-size: 12px;
+            }  
+        }
+
+        &__order-btn--test {
+            &::after {
+                content: '';
+                position: absolute;
+                right: 16px;
+                top: 27px;
+                width: 119px;
+                height: 32px;
+                border-radius: 16px;
+                background-color: #FF3E79; // только цвет фона
+                z-index: 0;
+            }
+              // Добавляем псевдоэлемент для стрелки
+            &::before {
+                content: '';
+                position: absolute;
+                top: 38px;
+                right: 27px;
+                width: 7px;
+                height: 10px;
+                background: url('../img/dropdown-white.svg') no-repeat center;
+                z-index: 1;
+            }
+        }
+    }
+
+    .extra-info {
+        height: 100px;
+        
+        padding-left: 23px;
+        padding-top: 24px;
+    }
+
+    .commercial-link {
+        margin-left: 6px;
+        white-space: nowrap;
+        position: relative;
+
+         &::before {
+            content: '';
+            position: absolute;
+            right: -135px;
+            top: -2px;
+            width: 24px;
+            height: 27.5px;
+            background: url('../img/dropdown.svg') no-repeat center;
+            background-size: 6px 11.45px;
+        }
+    }
+}
