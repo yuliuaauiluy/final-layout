@@ -1,2 +1,7 @@
 node_modules/
 dist/
+*.css
+*.css.map
+dist/
+js/bundle.js
+js/bundle.js.map
