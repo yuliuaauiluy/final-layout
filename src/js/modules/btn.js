@@ -3,6 +3,7 @@ import { updateAllSliders } from '../modules/slider.js';
 export function initBtn() {
   initBrandsSection();
   initDevicesSection();
+  initServicesSection();
 }
 
 function initBrandsSection() {
@@ -36,26 +37,27 @@ function initDevicesSection() {
 function setupSection(btnMore, btnLess, slides, section, slider, sectionName) {
 
   function getVisibleCount() {
-    const width = window.innerWidth;
-    
-    if (sectionName === 'brands') {
-      if (width >= 1366) return 8;
-      if (width >= 768) return 6;
-      return slides.length;
-    } 
-    else if (sectionName === 'devices') {
-      if (width >= 1366) return 4;
-      if (width >= 768) return 3;
-      return slides.length;
-    }
-    return slides.length;
+  const width = window.innerWidth;
+  
+  if (sectionName === 'brands') {
+    if (width >= 1366) return 8;      // desktop: 1120px+
+    if (width >= 768) return 6;       // tablet: 768-1119px
+    return slides.length;             // mobile: <768px
+  } 
+  else if (sectionName === 'devices') {
+    if (width >= 1366) return 4;      // desktop: 1120px+
+    if (width >= 768) return 3;       // tablet: 768-1119px
+    return slides.length;             // mobile: <768px
   }
+  return slides.length;
+}
 
   function calculateHeight(showAll = false) {
     const width = window.innerWidth;
     const visibleCount = showAll ? slides.length : getVisibleCount();
     
     if (sectionName === 'brands') {
+      
       if (width >= 1366) {
         // desktop - 2 ряда по 4 элемента + место для кнопки
         const rows = Math.ceil(visibleCount / 4);
@@ -147,4 +149,36 @@ function setupSection(btnMore, btnLess, slides, section, slider, sectionName) {
 
   // Инициализация
   applyInitialState();
+}
+
+
+//Читать далее
+function initServicesSection() {
+    const btnMore = document.querySelector('.main-hero-section__read-more-button');
+    if (!btnMore) return;
+
+    
+    btnMore.addEventListener('click', function() {
+        // Определяем ширину экрана
+        const screenWidth = window.innerWidth;
+        const imgLogo = document.querySelector('.main-hero-section__img-logo');
+        
+        if (screenWidth >= 1024) { // Десктоп
+            const extraInfo = document.querySelector('.main-hero-section__extra-info-desktop-version');
+            if (extraInfo) extraInfo.style.display = 'block';
+            imgLogo.style.top = '380px';
+        } 
+        else if (screenWidth >= 768) { // Планшет
+            const extraInfo = document.querySelector('.main-hero-section__extra-info-tablet-version');
+            if (extraInfo) extraInfo.style.display = 'block';
+            imgLogo.style.top = '443px';
+        }
+        else { // Мобильный
+            const extraInfo = document.querySelector('.main-hero-section__extra-info-mobile-version');
+            if (extraInfo) extraInfo.style.display = 'block';
+        }
+        
+        // Скрываем кнопку после нажатия
+        this.style.display = 'none';
+    });
 }

@@ -100,3 +100,5 @@ export function updateAllSliders() {
     sliders.services.updateSlides();
   }
 }
+
+

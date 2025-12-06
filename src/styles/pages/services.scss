@@ -18,6 +18,12 @@
             position: relative;
             bottom: 5.41px;
         }
+
+        .btnClick-profile,
+        .btnClick-repair,
+        .btnClick-checkstatus {
+            display: none;
+        }
     }
 }
 
@@ -137,5 +143,14 @@
         text-wrap: nowrap;
         font-weight: 500;
         }
+
+        .main-hero-section__img-logo {
+            position: absolute;
+        }
+        .main-hero-section__extra-info {
+            display: none;
+        }
+
+
     }
 }
