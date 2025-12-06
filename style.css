@@ -1390,6 +1390,10 @@ li {
     .header-nav__logo {
       position: relative;
       bottom: 5.41px; }
+    .header-nav .btnClick-profile,
+    .header-nav .btnClick-repair,
+    .header-nav .btnClick-checkstatus {
+      display: none; }
 
 .main {
   height: 498px;
@@ -1465,6 +1469,10 @@ li {
       margin-left: 8px;
       text-wrap: nowrap;
       font-weight: 500; }
+    .main-hero-section .main-hero-section__img-logo {
+      position: absolute; }
+    .main-hero-section .main-hero-section__extra-info {
+      display: none; }
 
 .modal {
   display: none;
@@ -1922,6 +1930,8 @@ li {
             left: 135px;
             width: 40px;
             height: 40px; }
+          body .app-layout .main .btn-submit-a-request .btnClick-submit {
+            display: none; }
         body .app-layout .main .btn-repair-status {
           display: inline-block;
           margin-left: 80px;
@@ -1935,6 +1945,8 @@ li {
             left: 130px;
             width: 40px;
             height: 40px; }
+          body .app-layout .main .btn-repair-status .btnClick-repair-status {
+            display: none; }
         body .app-layout .main-nav-mask {
           overflow-x: auto;
           -webkit-mask-image: linear-gradient(to right, black);
