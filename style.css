@@ -1377,6 +1377,9 @@ li {
 .show-less:not(.hidden) {
   display: flex; }
 
+aside {
+  position: fixed !important; }
+
 .header {
   padding: 24px 16px;
   height: 88px;
